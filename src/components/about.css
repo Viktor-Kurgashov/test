@@ -3,7 +3,7 @@
 
   @media (min-width: 1280px) {
     display: grid;
-    grid-template-columns: 40% 1fr;
+    grid-template-columns: 39.75% 1fr;
     column-gap: 32px;
     margin-top: 80px;
   }
@@ -30,8 +30,7 @@
     position: absolute;
     inset-block: 0;
     right: 0;
-    max-width: 33%;
-    /* width: auto; */
+    max-width: 32.25%;
   }
 }
 
@@ -40,8 +39,10 @@
   transform: scale(1.12);
 
   @media (width >= 1280px) {
+    transform: translateX(-8px);
     grid-row: span 2;
     width: auto;
+    margin-top: 38px;
   }
 }
 
@@ -60,40 +61,18 @@
     display: grid;
     grid-template-columns: 43% 1fr;
     grid-auto-rows: min-content;
-    margin-top: 62px;
-
-    dl {
-      display: grid;
-      grid-column: 1 / -1;
-      grid-template-columns: subgrid;
-    }
+    margin-top: 25px;
 
     dt {
+      padding-block: 15px;
       padding-right: 16px;
     }
 
     dd {
       padding-left: 16px;
-      border-left: 1px solid;
+      padding-block: 15px;
+      border-left: 1px solid var(--color-grey-200);
     }
-  }
-
-  dl:not(:last-of-type) {
-    border-bottom: 1px solid #D0D0D0;
-    padding-bottom: 16px;
-    margin-bottom: 16px;
-
-    @media (min-width: 1280px) {
-      padding-bottom: 15px;
-    }
-  }
-
-  @media (width < 1280px) {
-  dl {
-    gap: 12px;
-    display: flex;
-    flex-wrap: wrap;
-  }
   }
 
   dd {
@@ -106,17 +85,35 @@
   }
 }
 
-.about__bottom {
-  color: var(--color-blue-100);
-  margin-top: 36px;
+.about__row {
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--color-grey-200);
 
-  @media (width >=1280px) {
-    margin-top: 48px;
-    grid-column: 2;
+    @media (width < 1280px) {
+      padding-bottom: 15px;
+      margin-bottom: 16px;
+    }
+  }
+
+  @media (width < 1280px) {
+    gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 1280px) {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
   }
 }
 
-.about__ {}
-.about__ {}
-.about__ {}
-.about__ {}
+.about__bottom {
+  color: var(--color-blue-100);
+  margin-top: 38px;
+
+  @media (width >= 1280px) {
+    margin-top: 8px;
+    grid-column: 2;
+  }
+}

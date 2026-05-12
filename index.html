@@ -8,7 +8,7 @@
   </head>
   <body>
     <header class="header container">
-      <img src="./src/assets/images/logo.svg" alt="logo" width="245" height="36" class="header__logo" />
+      <img src="./public/logo.svg" alt="logo" width="245" height="36" class="header__logo" />
     </header>
 
     <main>
@@ -46,28 +46,31 @@
           посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
         </h2>
 
-        <img src="./about-2-mob.png" alt="image" loading="lazy" width="474" height="527" class="about__visual"/>
+        <picture class="about__visual">
+          <source media="(min-width:1280px)" srcset="./about-2.png">
+          <img src="./about-2-mob.png" alt="image" loading="lazy" width="474" height="527" />
+        </picture>
 
         <h2 class="about__caption h1">и Сеанс <b>одновременной игры в шахматы на 160 досках</b> гроссмейстера О. Бендера</h2>
 
         <div class="about__list t1">
-          <dl>
+          <dl class="about__row">
             <dt>Место проведения:</dt>
             <dd>Клуб «Картонажник»</dd>
           </dl>
-          <dl>
+          <dl class="about__row">
             <dt>Дата и время мероприятия:</dt>
             <dd>22 июня 1927 г. в 18:00</dd>
           </dl>
-          <dl>
+          <dl class="about__row">
             <dt>Стоимость входных билетов:</dt>
             <dd>20 коп.</dd>
           </dl>
-          <dl>
+          <dl class="about__row">
             <dt>Плата за игру:</dt>
             <dd>50 коп.</dd>
           </dl>
-          <dl>
+          <dl class="about__row">
             <dt>Взнос на телеграммы:</dt>
             <dd><s>100 руб.</s> 21 руб. 16 коп.</dd>
           </dl>
@@ -83,7 +86,7 @@
         </h2>
 
         <div class="steps__content slider">
-          <div class="steps__wrapper slider__body">
+          <div class="steps__wrapper slider__body hide-scrollbar">
             <ul class="steps__list slider__list t2">
               <li class="steps__item">Строительство железнодорожной магистрали Москва-Васюки</li>
 
@@ -118,7 +121,7 @@
       <section class="team container slider">
         <h2 class="team__title h00">Участники турнира</h2>
 
-        <div class="team__wrapper slider__body">
+        <div class="team__wrapper slider__body hide-scrollbar">
           <ul class="team__list slider__list">
             <li class="team__item team-card">
               <img class="team-card__avatar" src="./avatar.jpg" />
