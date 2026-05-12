@@ -1,6 +1,6 @@
 .hero {
   background-color: var(--color-grey-100);
-  background-image: url('./hero-bg-m.png');
+  background-image: url('/hero-bg-m.png');
   background-position: center bottom;
   background-repeat: no-repeat;
 
@@ -10,7 +10,7 @@
   }
 
   @media (width >= 1280px) {
-    background-image: url('./hero-bg.jpg');
+    background-image: url('/hero-bg.jpg');
   }
 }
 

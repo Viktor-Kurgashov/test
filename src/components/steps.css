@@ -86,7 +86,7 @@
   }
 
   @media (width >= 1280px) {
-    background: url('./noise.jpg');
+    background: url('/noise.jpg');
     position: relative;
     padding: 20px;
     padding-right: 22px;
