@@ -50,7 +50,7 @@
     scroll-snap-stop: always;
     scroll-padding: 20px;
     overflow-x: scroll;
-    background: url('./src/assets/images/noise-2.png'), url('./src/assets/images/noise.png');
+    background: url('./noise.jpg');
     flex-basis: 100%;
   }
 }
@@ -86,7 +86,7 @@
   }
 
   @media (width >= 1280px) {
-    background: url("./src/assets/images/noise-2.png"), url("./src/assets/images/noise.png");
+    background: url('./noise.jpg');
     position: relative;
     padding: 20px;
     padding-right: 22px;
