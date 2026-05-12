@@ -63,7 +63,7 @@
     flex-flow: column wrap;
     gap: 25px 0px;
     max-height: 380px;
-    width: max-content;
+    min-width: 100%;
     padding: 60px 20px 30px;
   }
 
@@ -82,7 +82,7 @@
   padding-right: 20px;
 
   @media (width < 1280px) {
-    width: calc(100vw - 60px);
+    width: calc(100% + 20px);
   }
 
   @media (width >= 1280px) {

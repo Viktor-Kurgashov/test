@@ -29,7 +29,6 @@
 }
 
 .team__list {
-  flex-shrink: 0;
   display: flex;
   min-width: 100%;
 
@@ -42,8 +41,8 @@
 .team__item {
   scroll-snap-align: start;
 
-  @media (width <=1280px) {
-    width: calc(100vw - 40px);
+  @media (width <= 1280px) {
+    min-width: 100%;
   }
 
   @media (width >=1280px) {
@@ -58,9 +57,3 @@
   align-items: center;
   column-gap: 14px;
 }
-
-.team__btn-prev {
-  transform: rotate(180deg);
-}
-
-.team__ {}

@@ -16,4 +16,6 @@ import './components/team.css';
 
 document.body.querySelectorAll('.marquee').forEach((el) => new Marquee(el));
 
-document.body.querySelectorAll('.slider').forEach((el) => new Slider(el));
+document.body.querySelectorAll('.slider').forEach((el) => {
+  requestAnimationFrame(() => new Slider(el));
+});
