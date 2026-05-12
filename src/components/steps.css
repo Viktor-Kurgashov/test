@@ -1,0 +1,144 @@
+.steps {
+  margin-top: 120px;
+
+  @media (width >= 1280px) {
+    margin-top: 200px;
+  }
+}
+
+.steps__title {
+  max-width: 800px;
+}
+
+.steps__subtitle {
+  color: var(--color-blue-100);
+  text-transform: none;
+  display: inline-block;
+
+  @media (width < 1280px) {
+    margin-top: 12px;
+  }
+
+  @media (width >= 1280px) {
+    max-width: 300px;
+    letter-spacing: 0.007em;
+    margin-left: 4px;
+  }
+}
+
+.steps__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 28px 16px;
+  position: relative;
+
+  @media (width < 1280px) {
+    padding-top: 142px;
+  }
+
+  @media (width >=1280px) {
+    margin-top: 54px;
+  }
+}
+
+.steps__wrapper {
+  @media (width < 1280px) {
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    scroll-padding: 20px;
+    overflow-x: scroll;
+    background: url('./src/assets/images/noise-2.png'), url('./src/assets/images/noise.png');
+    flex-basis: 100%;
+  }
+}
+
+.steps__list {
+  counter-reset: index;
+
+  @media (width < 1280px) {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 25px 0px;
+    max-height: 380px;
+    width: max-content;
+    padding: 60px 20px 30px;
+  }
+
+  @media (width >= 1280px) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+.steps__item {
+  scroll-snap-align: start;
+  display: flex;
+  align-items: start;
+  gap: 16px;
+  padding-right: 20px;
+
+  @media (width < 1280px) {
+    width: calc(100vw - 60px);
+  }
+
+  @media (width >= 1280px) {
+    background: url("./src/assets/images/noise-2.png"), url("./src/assets/images/noise.png");
+    position: relative;
+    padding: 20px;
+    padding-right: 22px;
+
+    &:nth-child(3) {
+      grid-row: span 2;
+    }
+
+    &:last-child {
+      grid-column: span 2;
+      padding-right: 38%;
+    }
+  }
+
+  &::before {
+    counter-increment: index;
+    content: counter(index);
+    background: var(--color-white);
+    border-radius: 9999px;
+    text-align: center;
+    line-height: 36px;
+    flex-shrink: 0;
+    width: 36px;
+  }
+}
+
+.steps__img {
+  position: absolute;
+  height: auto;
+
+  @media (width < 1280px) {
+    transform-origin: top right;
+    transform: rotate(-3deg);
+    object-fit: contain;
+    max-height: 200px;
+    inset-inline: 2px 0;
+    top: 2px;
+  }
+
+  @media (width >= 1280px) {
+    top: -73%;
+    width: 50%;
+    right: -8%;
+  }
+}
+
+.steps__controls {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+
+  @media (width >= 1280px) {
+    display: none;
+  }
+}

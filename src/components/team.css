@@ -1,0 +1,66 @@
+@import './team-card.css';
+
+.team {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  margin-block: 122px 100px;
+
+  @media (width >= 1280px) {
+    margin-top: 200px;
+    margin-bottom: 140px;
+    row-gap: 60px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
+
+.team__wrapper {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
+  overflow-x: scroll;
+  display: flex;
+
+  @media (width >=1280px) {
+    flex-basis: 100%;
+    order: 2;
+  }
+}
+
+.team__list {
+  flex-shrink: 0;
+  display: flex;
+  min-width: 100%;
+
+  @media (width >= 1280px) {
+    width: 100%;
+    column-gap: 20px;
+  }
+}
+
+.team__item {
+  scroll-snap-align: start;
+
+  @media (width <=1280px) {
+    width: calc(100vw - 40px);
+  }
+
+  @media (width >=1280px) {
+    width: calc(100% / 3 - 13px);
+    flex-shrink: 0;
+  }
+}
+
+.team__controls {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 14px;
+}
+
+.team__btn-prev {
+  transform: rotate(180deg);
+}
+
+.team__ {}

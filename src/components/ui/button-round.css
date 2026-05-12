@@ -1,0 +1,33 @@
+.button-round {
+  transition: 0.3s background-color;
+  background: var(--color-black-100);
+  color: var(--color-white-100);
+  border-radius: 9999px;
+  display: block;
+  width: 36px;
+  aspect-ratio: 1;
+  padding-left: 10px;
+
+  &::before {
+    content: "";
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    display: block;
+    width: 33.33%;
+    aspect-ratio: 1;
+    transform: rotate(45deg);
+  }
+
+  &:hover {
+    background-color: var(--color-yellow-100);
+  }
+
+  &:disabled {
+    background-color: var(--color-grey-200);
+  }
+
+  @media (width >=1280px) {
+    width: 44px;
+    padding-left: 14px;
+  }
+}

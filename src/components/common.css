@@ -1,0 +1,33 @@
+.container {
+  padding-inline: max(calc(50vw - 180px), 20px);
+
+  @media (width >= 1280px) {
+    padding-inline: max(calc(50vw - 610px), 72px);
+  }
+}
+
+.header {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  padding-top: 18px;
+
+  @media (width >= 1280px) {
+    padding-top: 26px;
+  }
+}
+
+.header__logo {
+  width: auto;
+  height: auto;
+
+  @media (width < 1280px) {
+    max-width: 213px;
+  }
+}
+
+.footer {
+  background: var(--color-grey-100);
+  padding-block: 40px 60px;
+  min-height: 150px;
+}

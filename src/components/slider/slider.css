@@ -1,0 +1,20 @@
+.slider__btn-prev {
+  transform: rotate(180deg);
+}
+
+.slider__pagination {
+  display: flex;
+  column-gap: 6px;
+}
+
+.slider__bullet {
+  transition: 0.3s background-color;
+  background: var(--color-grey-100);
+  border-radius: 9999px;
+  width: 10px;
+  height: 10px;
+
+  &[aria-current="true"] {
+    background-color: var(--color-black-100);
+  }
+}

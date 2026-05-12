@@ -1,0 +1,13 @@
+:root {
+  --color-white-100: #FFFFFF;
+  --color-grey-100: #E9DED4;
+  --color-grey-200: #D6D6D6;
+  --color-black-100: #1F1F1F;
+  --color-black-200: #313131;
+  --color-red-100: #F54932;
+  --color-yellow-100: #FBCE51;
+  --color-blue-100: #3057A2;
+
+  --font-heading: "Merriweather";
+  --font-text: "GolosText";
+}

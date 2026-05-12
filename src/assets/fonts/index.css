@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400, 700;
+  src: url("Merriweather-VariableFont_opsz,wdth,wght.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "GolosText";
+  font-style: normal;
+  font-weight: 400, 500, 600;
+  src: url("GolosText-VariableFont_wght.ttf") format('truetype');
+}

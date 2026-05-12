@@ -1,0 +1,86 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  position: relative;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  color: var(--black-200);
+}
+
+.h0 {
+  font: normal 36px / 40px var(--font-heading);
+  text-transform: uppercase;
+
+  @media (width >= 1280px) {
+    font-size: 60px;
+    line-height: 66px;
+  }
+}
+
+.h00 {
+  font: normal 36px / 40px var(--font-heading);
+  text-transform: uppercase;
+
+  @media (width >=1280px) {
+    font-size: 54px;
+    line-height: 65px;
+    letter-spacing: 0.03em;
+  }
+}
+
+.h1 {
+  font: normal 28px / 38px var(--font-heading);
+  text-transform: uppercase;
+
+  b {
+    font-weight: 700;
+    color: var(--color-red-100);
+  }
+
+  @media (width >= 1280px) {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}
+
+.h2 {
+  font: normal 36px / 100% var(--font-heading);
+}
+
+.h4 {
+  font: normal 16px / 18px var(--font-heading);
+  text-transform: uppercase;
+
+  @media (width >= 1280px) {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+.t0 {
+  font: 500 24px / 29px var(--font-text);
+}
+
+.t1 {
+  font: normal 1.25rem / 120% var(--font-text);
+}
+
+.t2 {
+  font: normal 18px / 23px var(--font-text);
+  letter-spacing: 0em;
+
+  @media (width >=1280px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.t21 {
+  font: normal 18px / 23px var(--font-text);
+  letter-spacing: 0em;
+}
+
+.t3 {
+  font: normal 16px / 19px var(--font-text);
+}

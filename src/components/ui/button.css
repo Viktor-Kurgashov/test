@@ -1,0 +1,48 @@
+.button {
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.3s;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+}
+
+.button--black {
+  background-color: var(--color-black-100);
+  color: var(--color-white-100);
+
+  &:hover {
+    background-color: var(--color-yellow-100);
+    color: var(--color-black-100);
+  }
+}
+
+.button--white {
+  background-color: var(--color-white-100);
+  color: var(--color-black-100);
+  border-color: transparent;
+
+  @media (width >= 1280px) {
+    background-color: transparent;
+    border-color: currentColor;
+    color: var(--color-black-100);
+  }
+
+  &:hover {
+    background-color: var(--color-black-100);
+    border-color: transparent;
+    color: var(--color-white-100);
+  }
+}
+
+.button--blue {
+  border-color: currentColor;
+  color: var(--color-blue-100);
+
+  &:hover {
+    background-color: var(--color-blue-100);
+    border-color: transparent;
+    color: var(--color-white-100);
+  }
+}
