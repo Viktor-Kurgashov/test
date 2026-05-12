@@ -4,11 +4,16 @@ export default class Slider {
   #btnPrev = null;
   #btnNext = null;
 
+  #body = null;
   #counter = null;
   #bullets = null;
 
+  #slideWidth = 0;
   #slidesCount = 0;
   #maxIndex = 0;
+
+  #autoplayTimerId = 0;
+  #currentIndex = 0;
 
   set currentIndex(value) {
     if (this.#counter) {
@@ -28,48 +33,76 @@ export default class Slider {
         elem.setAttribute('aria-current', index === value);
       });
     }
+
+    this.#currentIndex = value;
   }
 
   constructor(parent) {
     const wrapper = parent.querySelector('.slider__list');
 
-    const scrollable = parent.querySelector('.slider__body');
+    this.#body = parent.querySelector('.slider__body');
 
-    const maxScroll = Math.abs(scrollable.offsetWidth - scrollable.scrollWidth);
+    const maxScroll = Math.abs(this.#body.offsetWidth - this.#body.scrollWidth);
 
-    this.#slidesCount = Math.round(scrollable.scrollWidth / wrapper.firstElementChild.offsetWidth);
+    this.#slideWidth = wrapper.firstElementChild.offsetWidth;
 
-    this.#counter = parent.querySelector('.slider__counter');
+    this.#slidesCount = Math.round(this.#body.scrollWidth / this.#slideWidth);
 
-    this.#bullets = parent.querySelector('.slider__pagination');
-
-    this.#maxIndex = Math.round(maxScroll / wrapper.firstElementChild.offsetWidth);
+    this.#maxIndex = Math.round(maxScroll / this.#slideWidth);
 
     this.#btnNext = parent.querySelector('.slider__btn-next');
     this.#btnPrev = parent.querySelector('.slider__btn-prev');
 
-    this.#btnNext?.addEventListener('click', () => {
-      scrollable.scrollBy(300, 0);
-    })
+    this.#counter = parent.querySelector('.slider__counter');
+    this.#bullets = parent.querySelector('.slider__pagination');
 
-    this.#btnPrev?.addEventListener('click', () => {
-      scrollable.scrollBy(-300, 0);
-    })
+    this.#btnNext?.addEventListener('click', this.#slideNext.bind(this));
 
-    scrollable?.addEventListener('scroll', ({ currentTarget }) => {
+    this.#btnPrev?.addEventListener('click', this.#slidePrev.bind(this))
+
+    this.#body?.addEventListener('scroll', ({ currentTarget }) => {
       this.currentIndex = Math.round(currentTarget.scrollLeft / maxScroll * this.#maxIndex);
     });
 
     if (this.#bullets) {
-      this.#bullets.innerHtml = '';
-
-      const markup = Array.from({ length: this.#slidesCount }).reduce((acc, _, index) => {
-        return acc + '<span class="slider__bullet"></span>';
-      }, '');
+      const markup = Array
+        .from({ length: this.#slidesCount })
+        .reduce((acc, _, index) => {
+          return acc + '<span class="slider__bullet"></span>';
+        }, '');
 
       this.#bullets.insertAdjacentHTML('beforeend', markup);
     }
 
     this.currentIndex = 0;
+
+    if (parent.hasAttribute('data-slider-autoplay')) {
+      const play = (index = 0, revert = false) => {
+        if (
+          !revert && (index < this.#maxIndex) ||
+          revert && !index
+        ) {
+          this.#slideNext();
+
+          this.#autoplayTimerId = setTimeout(() => play(index + 1), 2500)
+        } else {
+          this.#slidePrev();
+
+          this.#autoplayTimerId = setTimeout(() => play(index - 1, true), 2500)
+        }
+      };
+
+      this.#autoplayTimerId = setTimeout(play.bind(this), 2500);
+    }
+  }
+
+  #slideNext() {
+    this.#body.scrollBy(this.#slideWidth, 0);
+    clearTimeout(this.#autoplayTimerId);
+  }
+
+  #slidePrev() {
+    this.#body.scrollBy(this.#slideWidth * -1, 0);
+    clearTimeout(this.#autoplayTimerId);
   }
 }

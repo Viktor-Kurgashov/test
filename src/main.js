@@ -13,9 +13,12 @@ import Marquee from './components/marquee';
 import Slider from './components/slider';
 import './components/steps.css'
 import './components/team.css';
+import initAppear from './components/appear';
 
 document.body.querySelectorAll('.marquee').forEach((el) => new Marquee(el));
 
 document.body.querySelectorAll('.slider').forEach((el) => {
   requestAnimationFrame(() => new Slider(el));
 });
+
+initAppear();
