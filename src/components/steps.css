@@ -50,7 +50,7 @@
     scroll-snap-stop: always;
     scroll-padding: 20px;
     overflow-x: scroll;
-    background: url('./noise.jpg');
+    background: url('/noise.jpg');
     flex-basis: 100%;
   }
 }
